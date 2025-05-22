@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ModoCarreraFC25.PlayersPage"
+             Title="Gestión de Jugadores"
+             BackgroundColor="#0D1421">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="20">
+
+        <!-- Header -->
+        <StackLayout Grid.Row="0" Spacing="10" Margin="0,10,0,20">
+            <Label Text="👤 Gestión de Jugadores" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#00D4FF" 
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+
+        <!-- Career Selector -->
+        <Frame Grid.Row="1" BackgroundColor="#1A2332" BorderColor="#00D4FF" CornerRadius="10" Margin="0,0,0,15">
+            <StackLayout Spacing="10">
+                <Label Text="Seleccionar Carrera:" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                <Picker x:Name="CareerPicker" 
+                        TextColor="White" 
+                        BackgroundColor="Transparent"
+                        SelectionChanged="OnCareerSelected"/>
+
+                <StackLayout x:Name="SeasonLayout" IsVisible="False" Spacing="10">
+                    <Label Text="Seleccionar Temporada:" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                    <Picker x:Name="SeasonPicker" 
+                            TextColor="White" 
+                            BackgroundColor="Transparent"
+                            SelectionChanged="OnSeasonSelected"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!-- Players List -->
+        <ScrollView Grid.Row="2">
+            <StackLayout x:Name="PlayersContainer" Spacing="10">
+                <Label x:Name="EmptyLabel" 
+                       Text="Selecciona una carrera y temporada para ver los jugadores" 
+                       TextColor="#B0C4DE" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       FontSize="16"/>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Add Player Button -->
+        <Button Grid.Row="3" 
+                x:Name="AddPlayerBtn"
+                Text="➕ Agregar Jugador" 
+                BackgroundColor="#00D4FF" 
+                TextColor="White" 
+                FontSize="16" 
+                FontAttributes="Bold"
+                CornerRadius="25"
+                HeightRequest="50"
+                Clicked="OnAddPlayerClicked"
+                IsVisible="False"/>
+    </Grid>
+</ContentPage>

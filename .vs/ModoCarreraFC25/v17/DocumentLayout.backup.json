@@ -1,7 +1,108 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\statisticspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\statisticspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\statisticspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\statisticspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\titlespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\titlespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\titlespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\titlespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\careerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\careerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\careerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\careerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\transferspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\transferspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\transferspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\transferspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\playerspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\playerspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\playerspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\playerspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\seasonspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\seasonspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\views\\seasonspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\views\\seasonspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\services\\jsondataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\services\\jsondataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\services\\idataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\services\\idataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\models\\season.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\models\\season.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\models\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\models\\transfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\models\\title.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\models\\title.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\models\\statistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\models\\statistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\models\\career.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\models\\career.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|c:\\users\\sebastian\\onedrive\\desktop\\modocarrerafc25\\modocarrerafc25\\modocarrerafc25.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F6B383C0-2D56-44AF-9B60-4968F4F9BE8A}|ModoCarreraFC25\\ModoCarreraFC25.csproj|solutionrelative:modocarrerafc25\\modocarrerafc25.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,8 +110,333 @@
       "DocumentGroups": [
         {
           "DockedHeight": 379,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StatisticsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\StatisticsPage.xaml.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\StatisticsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\StatisticsPage.xaml.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\StatisticsPage.xaml.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwH0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:50:44.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TitlesPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TitlesPage.xaml.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\TitlesPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TitlesPage.xaml.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\TitlesPage.xaml.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAkwJIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:49:09.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\App.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\App.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\App.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:37:40.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\AppShell.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\AppShell.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:37:42.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\MainPage.xaml.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\MainPage.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:35:42.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\MainPage.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\MainPage.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:30:52.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StatisticsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\StatisticsPage.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\StatisticsPage.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\StatisticsPage.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\StatisticsPage.xaml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAmwLIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:37:10.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CareerPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\CareerPage.xaml.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\CareerPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\CareerPage.xaml.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\CareerPage.xaml.cs",
+              "ViewState": "AgIAAAMBAAAAAAAAAAAmwBwBAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:38:00.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TitlesPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TitlesPage.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\TitlesPage.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TitlesPage.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\TitlesPage.xaml",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAmwHIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:37:00.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CareerPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\CareerPage.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\CareerPage.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\CareerPage.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\CareerPage.xaml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAmwG0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:36:18.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TransfersPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TransfersPage.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\TransfersPage.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TransfersPage.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\TransfersPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:36:51.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TransfersPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TransfersPage.xaml.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\TransfersPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\TransfersPage.xaml.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\TransfersPage.xaml.cs",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAkwDIBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:46:20.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PlayersPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\PlayersPage.xaml.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\PlayersPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\PlayersPage.xaml.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\PlayersPage.xaml.cs",
+              "ViewState": "AgIAANUAAAAAAAAAAAAkwPkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:45:06.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SeasonsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\SeasonsPage.xaml.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\SeasonsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\SeasonsPage.xaml.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\SeasonsPage.xaml.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAYwNkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:41:15.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PlayersPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\PlayersPage.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\PlayersPage.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\PlayersPage.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\PlayersPage.xaml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAmwD4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:36:42.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SeasonsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\SeasonsPage.xaml",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Views\\SeasonsPage.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Views\\SeasonsPage.xaml",
+              "RelativeToolTip": "ModoCarreraFC25\\Views\\SeasonsPage.xaml",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAqwJYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T21:36:28.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "JsonDataService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Services\\JsonDataService.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Services\\JsonDataService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Services\\JsonDataService.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Services\\JsonDataService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwHsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:35:22.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IDataService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Services\\IDataService.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Services\\IDataService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Services\\IDataService.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Services\\IDataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:35:01.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Title.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Title.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Models\\Title.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Title.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Models\\Title.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAkwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:33:11.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Transfer.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Transfer.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Models\\Transfer.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Transfer.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Models\\Transfer.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAkwGwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:33:04.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Statistics.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Statistics.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Models\\Statistics.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Statistics.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Models\\Statistics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:33:25.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Player.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Models\\Player.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Player.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Models\\Player.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAkwKQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:32:53.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Season.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Season.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Models\\Season.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Season.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Models\\Season.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAkwJ8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:32:45.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Career.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Career.cs",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\Models\\Career.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\Models\\Career.cs",
+              "RelativeToolTip": "ModoCarreraFC25\\Models\\Career.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwD4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T21:32:37.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ModoCarreraFC25",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\ModoCarreraFC25.csproj",
+              "RelativeDocumentMoniker": "ModoCarreraFC25\\ModoCarreraFC25.csproj",
+              "ToolTip": "C:\\Users\\Sebastian\\OneDrive\\Desktop\\ModoCarreraFC25\\ModoCarreraFC25\\ModoCarreraFC25.csproj",
+              "RelativeToolTip": "ModoCarreraFC25\\ModoCarreraFC25.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-22T21:31:28.917Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"

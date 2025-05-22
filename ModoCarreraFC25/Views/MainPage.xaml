@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ModoCarreraFC25.MainPage"
+             Title="FC25 Career Mode"
+             BackgroundColor="#0D1421">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*" Padding="20">
+
+            <!-- Header Section -->
+            <StackLayout Grid.Row="0" Spacing="10" Margin="0,20,0,40">
+                <Label Text="⚽ FC25 Career Mode" 
+                       FontSize="32" 
+                       FontAttributes="Bold" 
+                       TextColor="#00D4FF" 
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Gestiona tu carrera como entrenador" 
+                       FontSize="16" 
+                       TextColor="#B0C4DE" 
+                       HorizontalOptions="Center"/>
+
+                <BoxView HeightRequest="2" 
+                         BackgroundColor="#00D4FF" 
+                         Margin="50,10,50,0"/>
+            </StackLayout>
+
+            <!-- Menu Grid -->
+            <Grid Grid.Row="1" 
+                  ColumnDefinitions="*,*" 
+                  RowDefinitions="*,*,*" 
+                  ColumnSpacing="15" 
+                  RowSpacing="15">
+
+                <!-- Carreras Button -->
+                <Frame Grid.Row="0" Grid.Column="0" 
+                       BackgroundColor="#1A2332" 
+                       BorderColor="#00D4FF" 
+                       CornerRadius="15" 
+                       Padding="0"
+                       HasShadow="True">
+                    <Button Text="🏆&#10;Carreras" 
+                            FontSize="18" 
+                            FontAttributes="Bold"
+                            TextColor="White" 
+                            BackgroundColor="Transparent"
+                            Clicked="OnCareersClicked"
+                            HeightRequest="120"/>
+                </Frame>
+
+                <!-- Temporadas Button -->
+                <Frame Grid.Row="0" Grid.Column="1" 
+                       BackgroundColor="#1A2332" 
+                       BorderColor="#00D4FF" 
+                       CornerRadius="15" 
+                       Padding="0"
+                       HasShadow="True">
+                    <Button Text="📅&#10;Temporadas" 
+                            FontSize="18" 
+                            FontAttributes="Bold"
+                            TextColor="White" 
+                            BackgroundColor="Transparent"
+                            Clicked="OnSeasonsClicked"
+                            HeightRequest="120"/>
+                </Frame>
+
+                <!-- Jugadores Button -->
+                <Frame Grid.Row="1" Grid.Column="0" 
+                       BackgroundColor="#1A2332" 
+                       BorderColor="#00D4FF" 
+                       CornerRadius="15" 
+                       Padding="0"
+                       HasShadow="True">
+                    <Button Text="👤&#10;Jugadores" 
+                            FontSize="18" 
+                            FontAttributes="Bold"
+                            TextColor="White" 
+                            BackgroundColor="Transparent"
+                            Clicked="OnPlayersClicked"
+                            HeightRequest="120"/>
+                </Frame>
+
+                <!-- Fichajes Button -->
+                <Frame Grid.Row="1" Grid.Column="1" 
+                       BackgroundColor="#1A2332" 
+                       BorderColor="#00D4FF" 
+                       CornerRadius="15" 
+                       Padding="0"
+                       HasShadow="True">
+                    <Button Text="💰&#10;Fichajes" 
+                            FontSize="18" 
+                            FontAttributes="Bold"
+                            TextColor="White" 
+                            BackgroundColor="Transparent"
+                            Clicked="OnTransfersClicked"
+                            HeightRequest="120"/>
+                </Frame>
+
+                <!-- Títulos Button -->
+                <Frame Grid.Row="2" Grid.Column="0" 
+                       BackgroundColor="#1A2332" 
+                       BorderColor="#00D4FF" 
+                       CornerRadius="15" 
+                       Padding="0"
+                       HasShadow="True">
+                    <Button Text="🏅&#10;Títulos" 
+                            FontSize="18" 
+                            FontAttributes="Bold"
+                            TextColor="White" 
+                            BackgroundColor="Transparent"
+                            Clicked="OnTitlesClicked"
+                            HeightRequest="120"/>
+                </Frame>
+
+                <!-- Estadísticas Button -->
+                <Frame Grid.Row="2" Grid.Column="1" 
+                       BackgroundColor="#1A2332" 
+                       BorderColor="#00D4FF" 
+                       CornerRadius="15" 
+                       Padding="0"
+                       HasShadow="True">
+                    <Button Text="📊&#10;Estadísticas" 
+                            FontSize="18" 
+                            FontAttributes="Bold"
+                            TextColor="White" 
+                            BackgroundColor="Transparent"
+                            Clicked="OnStatisticsClicked"
+                            HeightRequest="120"/>
+                </Frame>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

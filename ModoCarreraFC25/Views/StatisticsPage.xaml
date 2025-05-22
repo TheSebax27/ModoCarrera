@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ModoCarreraFC25.StatisticsPage"
+             Title="Estadísticas"
+             BackgroundColor="#0D1421">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,*" Padding="20">
+
+            <!-- Header -->
+            <StackLayout Grid.Row="0" Spacing="10" Margin="0,10,0,20">
+                <Label Text="📊 Estadísticas de Carrera" 
+                       FontSize="28" 
+                       FontAttributes="Bold" 
+                       TextColor="#00D4FF" 
+                       HorizontalOptions="Center"/>
+                <BoxView HeightRequest="2" BackgroundColor="#00D4FF" Margin="50,0"/>
+            </StackLayout>
+
+            <!-- Career Selection -->
+            <Frame Grid.Row="1" BackgroundColor="#1A2332" BorderColor="#00D4FF" CornerRadius="10" Margin="0,0,0,20">
+                <StackLayout Spacing="10">
+                    <Label Text="Seleccionar Carrera:" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                    <Picker x:Name="CareerPicker" 
+                            Title="Elige una carrera" 
+                            TextColor="White" 
+                            TitleColor="#B0C4DE"
+                            BackgroundColor="Transparent"
+                            SelectedIndexChanged="OnCareerSelected"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Statistics Content -->
+            <StackLayout Grid.Row="2" x:Name="StatsContainer" Spacing="20">
+
+                <!-- General Stats -->
+                <Frame BackgroundColor="#1A2332" BorderColor="#2A3441" CornerRadius="15">
+                    <StackLayout Spacing="15">
+                        <Label Text="📈 Estadísticas Generales" 
+                               TextColor="#00D4FF" 
+                               FontSize="20" 
+                               FontAttributes="Bold"/>
+
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="20" RowSpacing="10">
+                            <!-- Total Titles -->
+                            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#2A3441" CornerRadius="10" Padding="15">
+                                <StackLayout HorizontalOptions="Center" Spacing="5">
+                                    <Label Text="🏆" FontSize="24" HorizontalOptions="Center"/>
+                                    <Label x:Name="TotalTitlesLabel" Text="0" 
+                                           TextColor="#00D4FF" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="Títulos" TextColor="White" FontSize="12" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Total Seasons -->
+                            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#2A3441" CornerRadius="10" Padding="15">
+                                <StackLayout HorizontalOptions="Center" Spacing="5">
+                                    <Label Text="📅" FontSize="24" HorizontalOptions="Center"/>
+                                    <Label x:Name="TotalSeasonsLabel" Text="0" 
+                                           TextColor="#00D4FF" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="Temporadas" TextColor="White" FontSize="12" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Total Goals -->
+                            <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#2A3441" CornerRadius="10" Padding="15">
+                                <StackLayout HorizontalOptions="Center" Spacing="5">
+                                    <Label Text="⚽" FontSize="24" HorizontalOptions="Center"/>
+                                    <Label x:Name="TotalGoalsLabel" Text="0" 
+                                           TextColor="#00D4FF" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="Goles" TextColor="White" FontSize="12" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Win Percentage -->
+                            <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#2A3441" CornerRadius="10" Padding="15">
+                                <StackLayout HorizontalOptions="Center" Spacing="5">
+                                    <Label Text="📊" FontSize="24" HorizontalOptions="Center"/>
+                                    <Label x:Name="WinPercentageLabel" Text="0%" 
+                                           TextColor="#00D4FF" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="% Victorias" TextColor="White" FontSize="12" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Top Players -->
+                <Frame BackgroundColor="#1A2332" BorderColor="#2A3441" CornerRadius="15">
+                    <StackLayout Spacing="15">
+                        <Label Text="⭐ Mejores Jugadores" 
+                               TextColor="#00D4FF" 
+                               FontSize="20" 
+                               FontAttributes="Bold"/>
+
+                        <!-- Top Scorer -->
+                        <StackLayout x:Name="TopScorerContainer" Orientation="Horizontal" Spacing="10">
+                            <Label Text="🥇" FontSize="20"/>
+                            <StackLayout Spacing="2">
+                                <Label Text="Máximo Goleador" TextColor="#FFD700" FontSize="14" FontAttributes="Bold"/>
+                                <Label x:Name="TopScorerLabel" Text="N/A" TextColor="White" FontSize="16"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <!-- Top Assister -->
+                        <StackLayout x:Name="TopAssisterContainer" Orientation="Horizontal" Spacing="10">
+                            <Label Text="🥈" FontSize="20"/>
+                            <StackLayout Spacing="2">
+                                <Label Text="Más Asistencias" TextColor="#C0C0C0" FontSize="14" FontAttributes="Bold"/>
+                                <Label x:Name="TopAssisterLabel" Text="N/A" TextColor="White" FontSize="16"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <!-- Most Valuable -->
+                        <StackLayout x:Name="MostValuableContainer" Orientation="Horizontal" Spacing="10">
+                            <Label Text="🥉" FontSize="20"/>
+                            <StackLayout Spacing="2">
+                                <Label Text="Más Valioso" TextColor="#CD7F32" FontSize="14" FontAttributes="Bold"/>
+                                <Label x:Name="MostValuableLabel" Text="N/A" TextColor="White" FontSize="16"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Recent Titles -->
+                <Frame BackgroundColor="#1A2332" BorderColor="#2A3441" CornerRadius="15">
+                    <StackLayout Spacing="15">
+                        <Label Text="🏆 Títulos Recientes" 
+                               TextColor="#00D4FF" 
+                               FontSize="20" 
+                               FontAttributes="Bold"/>
+
+                        <CollectionView x:Name="RecentTitlesCollectionView" HeightRequest="200">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="Auto,*,Auto" Padding="10,5" ColumnSpacing="10">
+                                        <Label Grid.Column="0" Text="🏆" FontSize="16"/>
+                                        <StackLayout Grid.Column="1" Spacing="2">
+                                            <Label Text="{Binding Name}" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Type}" TextColor="#B0C4DE" FontSize="12"/>
+                                        </StackLayout>
+                                        <Label Grid.Column="2" Text="{Binding Year}" TextColor="#00D4FF" FontSize="14"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Most Expensive Transfers -->
+                <Frame BackgroundColor="#1A2332" BorderColor="#2A3441" CornerRadius="15">
+                    <StackLayout Spacing="15">
+                        <Label Text="💰 Fichajes Más Caros" 
+                               TextColor="#00D4FF" 
+                               FontSize="20" 
+                               FontAttributes="Bold"/>
+
+                        <CollectionView x:Name="ExpensiveTransfersCollectionView" HeightRequest="200">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="Auto,*,Auto" Padding="10,5" ColumnSpacing="10">
+                                        <Label Grid.Column="0" Text="💸" FontSize="16"/>
+                                        <StackLayout Grid.Column="1" Spacing="2">
+                                            <Label Text="{Binding PlayerName}" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                                            <Label Text="{Binding TransferType}" TextColor="#B0C4DE" FontSize="12"/>
+                                        </StackLayout>
+                                        <Label Grid.Column="2" Text="{Binding Amount, StringFormat='{0:C}'}" TextColor="#4CAF50" FontSize="14"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

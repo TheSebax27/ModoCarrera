@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ModoCarreraFC25.Views.CareerPage"
+             Title="🏆 Mis Carreras"
+             BackgroundColor="#0D1421">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20">
+
+        <!-- Header -->
+        <StackLayout Grid.Row="0" Spacing="10" Margin="0,10,0,20">
+            <Label Text="Gestión de Carreras" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#00D4FF" 
+                   HorizontalOptions="Center"/>
+            <BoxView HeightRequest="2" BackgroundColor="#00D4FF" Margin="50,0"/>
+        </StackLayout>
+
+        <!-- Careers List -->
+        <ScrollView Grid.Row="1">
+            <StackLayout x:Name="CareersContainer" Spacing="15">
+                <!-- Dynamic career items will be added here -->
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Add Career Button -->
+        <Button Grid.Row="2" 
+                Text="➕ Nueva Carrera" 
+                FontSize="18" 
+                FontAttributes="Bold"
+                TextColor="White" 
+                BackgroundColor="#00D4FF"
+                CornerRadius="25"
+                HeightRequest="50"
+                Margin="0,20,0,0"
+                Clicked="OnAddCareerClicked"/>
+    </Grid>
+
+    <!-- Career Form Modal (Hidden by default) -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Frame x:Key="CareerFormModal" 
+                   x:Name="CareerFormModal"
+                   BackgroundColor="#1A2332" 
+                   BorderColor="#00D4FF" 
+                   CornerRadius="15" 
+                   Padding="20"
+                   IsVisible="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Fill"
+                   Margin="20">
+
+                <StackLayout Spacing="15">
+                    <Label Text="Nueva Carrera" 
+                           FontSize="20" 
+                           FontAttributes="Bold" 
+                           TextColor="#00D4FF" 
+                           HorizontalOptions="Center"/>
+
+                    <Entry x:Name="ManagerNameEntry" 
+                           Placeholder="Nombre del Entrenador" 
+                           PlaceholderColor="#B0C4DE" 
+                           TextColor="White" 
+                           BackgroundColor="#0D1421"/>
+
+                    <Entry x:Name="InitialClubEntry" 
+                           Placeholder="Club Inicial" 
+                           PlaceholderColor="#B0C4DE" 
+                           TextColor="White" 
+                           BackgroundColor="#0D1421"/>
+
+                    <Picker x:Name="ModePicker" 
+                            Title="Modo de Juego" 
+                            TitleColor="#B0C4DE" 
+                            TextColor="White" 
+                            BackgroundColor="#0D1421">
+                        <Picker.Items>
+                            <x:String>Manager</x:String>
+                            <x:String>Jugador-Entrenador</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Editor x:Name="NotesEditor" 
+                            Placeholder="Notas (opcional)" 
+                            PlaceholderColor="#B0C4DE" 
+                            TextColor="White" 
+                            BackgroundColor="#0D1421" 
+                            HeightRequest="80"/>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Margin="0,10,0,0">
+                        <Button Grid.Column="0" 
+                                Text="Cancelar" 
+                                BackgroundColor="#DC143C" 
+                                TextColor="White" 
+                                CornerRadius="10"
+                                Clicked="OnCancelCareerClicked"/>
+
+                        <Button Grid.Column="1" 
+                                Text="Guardar" 
+                                BackgroundColor="#00D4FF" 
+                                TextColor="White" 
+                                CornerRadius="10"
+                                Clicked="OnSaveCareerClicked"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

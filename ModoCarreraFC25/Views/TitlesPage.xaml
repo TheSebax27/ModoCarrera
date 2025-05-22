@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ModoCarreraFC25.TitlesPage"
+             Title="Títulos"
+             BackgroundColor="#0D1421">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="20">
+
+        <!-- Header -->
+        <StackLayout Grid.Row="0" Spacing="10" Margin="0,10,0,20">
+            <Label Text="🏅 Gestión de Títulos" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   TextColor="#00D4FF" 
+                   HorizontalOptions="Center"/>
+            <BoxView HeightRequest="2" BackgroundColor="#00D4FF" Margin="50,0"/>
+        </StackLayout>
+
+        <!-- Career Selection -->
+        <Frame Grid.Row="1" BackgroundColor="#1A2332" BorderColor="#00D4FF" CornerRadius="10" Margin="0,0,0,20">
+            <StackLayout Spacing="10">
+                <Label Text="Seleccionar Carrera:" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                <Picker x:Name="CareerPicker" 
+                        Title="Elige una carrera" 
+                        TextColor="White" 
+                        TitleColor="#B0C4DE"
+                        BackgroundColor="Transparent"
+                        SelectedIndexChanged="OnCareerSelected"/>
+            </StackLayout>
+            </Frame>
+
+            <!-- Titles List -->
+            <CollectionView Grid.Row="2" x:Name="TitlesCollectionView" BackgroundColor="Transparent">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame BackgroundColor="#1A2332" 
+                               BorderColor="#2A3441" 
+                               CornerRadius="10" 
+                               Margin="0,5"
+                               Padding="15">
+                                <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="15">
+
+                                    <!-- Trophy Icon -->
+                                    <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                       Text="🏆" 
+                                       FontSize="30" 
+                                       VerticalOptions="Center"/>
+
+                                    <!-- Title Info -->
+                                    <StackLayout Grid.Row="0" Grid.Column="1" Spacing="2">
+                                        <Label Text="{Binding Name}" 
+                                           TextColor="White" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold"/>
+                                        <Label Text="{Binding Type}" 
+                                           TextColor="#00D4FF" 
+                                           FontSize="14"/>
+                                    </StackLayout>
+
+                                    <!-- Year and Club -->
+                                    <StackLayout Grid.Row="1" Grid.Column="1" Spacing="2">
+                                        <Label Text="{Binding Year, StringFormat='Año: {0}'}" 
+                                           TextColor="#B0C4DE" 
+                                           FontSize="12"/>
+                                        <Label Text="{Binding Club, StringFormat='Club: {0}'}" 
+                                           TextColor="#B0C4DE" 
+                                           FontSize="12"/>
+                                    </StackLayout>
+
+                                    <!-- Actions -->
+                                    <StackLayout Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" 
+                                           Orientation="Horizontal" 
+                                           VerticalOptions="Center"
+                                           Spacing="10">
+                                        <Button Text="✏️" 
+                                            BackgroundColor="#4CAF50" 
+                                            TextColor="White"
+                                            FontSize="12"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            CornerRadius="20"
+                                            CommandParameter="{Binding}"
+                                            Clicked="OnEditTitleClicked"/>
+                                        <Button Text="🗑️" 
+                                            BackgroundColor="#F44336" 
+                                            TextColor="White"
+                                            FontSize="12"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            CornerRadius="20"
+                                            CommandParameter="{Binding}"
+                                            Clicked="OnDeleteTitleClicked"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Add Button -->
+            <Button Grid.Row="3" 
+                Text="➕ Agregar Nuevo Título" 
+                BackgroundColor="#00D4FF" 
+                TextColor="White" 
+                FontSize="16" 
+                FontAttributes="Bold"
+                CornerRadius="25"
+                HeightRequest="50"
+                Margin="0,20,0,0"
+                Clicked="OnAddTitleClicked"/>
+    </Grid>
+</ContentPage>
