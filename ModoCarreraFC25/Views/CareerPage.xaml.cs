@@ -271,6 +271,7 @@ namespace ModoCarreraFC25.Views
             return frame;
         }
 
+
         private async void OnCareerTapped(Career career)
         {
            

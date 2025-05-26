@@ -3,131 +3,316 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ModoCarreraFC25.MainPage"
              Title="FC25 Career Mode"
-             BackgroundColor="#0D1421">
+             BackgroundColor="#121212">
 
     <ScrollView>
-        <Grid RowDefinitions="Auto,*" Padding="20">
+        <Grid RowDefinitions="Auto,*,Auto" Padding="0">
 
-            <!-- Header Section -->
-            <StackLayout Grid.Row="0" Spacing="10" Margin="0,20,0,40">
-                <Label Text="⚽ FC25 Career Mode" 
-                       FontSize="32" 
-                       FontAttributes="Bold" 
-                       TextColor="#00D4FF" 
-                       HorizontalOptions="Center"/>
+            <!-- Header Section with Background Image -->
+            <Grid Grid.Row="0" HeightRequest="200">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#1976D2" Offset="0.0" />
+                        <GradientStop Color="#0D47A1" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Grid.Background>
 
-                <Label Text="Gestiona tu carrera como entrenador" 
-                       FontSize="16" 
-                       TextColor="#B0C4DE" 
-                       HorizontalOptions="Center"/>
+                <Image Source="futbol.png" 
+                       Aspect="AspectFill" 
+                       Opacity="0.3"/>
 
-                <BoxView HeightRequest="2" 
-                         BackgroundColor="#00D4FF" 
-                         Margin="50,10,50,0"/>
+                <!-- Header Content -->
+                <StackLayout VerticalOptions="Center" Spacing="8" Margin="24">
+                    <Label Text="⚽" 
+                           FontSize="48" 
+                           HorizontalOptions="Center"
+                           TextColor="White"/>
+
+                    <Label Text="FC25 Career Mode" 
+                           FontSize="28" 
+                           FontAttributes="Bold" 
+                           TextColor="White" 
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Gestiona tu carrera como entrenador" 
+                           FontSize="16" 
+                           TextColor="#E3F2FD" 
+                           HorizontalOptions="Center"
+                           Opacity="0.9"/>
+                </StackLayout>
+
+                <!-- Floating Action Button Style Decoration -->
+                <Ellipse Fill="#FF6D00" 
+                         WidthRequest="24" 
+                         HeightRequest="24"
+                         HorizontalOptions="End"
+                         VerticalOptions="Start"
+                         Margin="0,16,16,0"/>
+
+                <Ellipse Fill="#4CAF50" 
+                         WidthRequest="16" 
+                         HeightRequest="16"
+                         HorizontalOptions="End"
+                         VerticalOptions="Start"
+                         Margin="0,48,32,0"/>
+            </Grid>
+
+            <!-- Menu Cards Section -->
+            <StackLayout Grid.Row="1" Spacing="16" Margin="16,24,16,16">
+
+                <!-- Row 1: Carreras y Temporadas -->
+                <Grid ColumnDefinitions="*,16,*" HeightRequest="140">
+                    <!-- Carreras Card -->
+                    <Frame Grid.Column="0" 
+                           BackgroundColor="#1E1E1E" 
+                           CornerRadius="16" 
+                           Padding="16"
+                           HasShadow="False">
+                        <Frame.Shadow>
+                            <Shadow Brush="#40000000" 
+                                    Offset="0,4" 
+                                    Radius="8" 
+                                    Opacity="0.3"/>
+                        </Frame.Shadow>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCareersClicked"/>
+                        </Frame.GestureRecognizers>
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Ellipse Grid.Row="0" 
+                                     Fill="#FF6B35" 
+                                     WidthRequest="48" 
+                                     HeightRequest="48"
+                                     HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" 
+                                   Text="🏆" 
+                                   FontSize="24"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Row="2" 
+                                   Text="Carreras" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold"
+                                   TextColor="White" 
+                                   HorizontalOptions="Center"
+                                   Margin="0,12,0,0"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Temporadas Card -->
+                    <Frame Grid.Column="2" 
+                           BackgroundColor="#1E1E1E" 
+                           CornerRadius="16" 
+                           Padding="16"
+                           HasShadow="False">
+                        <Frame.Shadow>
+                            <Shadow Brush="#40000000" 
+                                    Offset="0,4" 
+                                    Radius="8" 
+                                    Opacity="0.3"/>
+                        </Frame.Shadow>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSeasonsClicked"/>
+                        </Frame.GestureRecognizers>
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Ellipse Grid.Row="0" 
+                                     Fill="#4CAF50" 
+                                     WidthRequest="48" 
+                                     HeightRequest="48"
+                                     HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" 
+                                   Text="📅" 
+                                   FontSize="24"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Row="2" 
+                                   Text="Temporadas" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold"
+                                   TextColor="White" 
+                                   HorizontalOptions="Center"
+                                   Margin="0,12,0,0"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+                <!-- Row 2: Jugadores y Fichajes -->
+                <Grid ColumnDefinitions="*,16,*" HeightRequest="140">
+                    <!-- Jugadores Card -->
+                    <Frame Grid.Column="0" 
+                           BackgroundColor="#1E1E1E" 
+                           CornerRadius="16" 
+                           Padding="16"
+                           HasShadow="False">
+                        <Frame.Shadow>
+                            <Shadow Brush="#40000000" 
+                                    Offset="0,4" 
+                                    Radius="8" 
+                                    Opacity="0.3"/>
+                        </Frame.Shadow>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnPlayersClicked"/>
+                        </Frame.GestureRecognizers>
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Ellipse Grid.Row="0" 
+                                     Fill="#9C27B0" 
+                                     WidthRequest="48" 
+                                     HeightRequest="48"
+                                     HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" 
+                                   Text="👤" 
+                                   FontSize="24"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Row="2" 
+                                   Text="Jugadores" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold"
+                                   TextColor="White" 
+                                   HorizontalOptions="Center"
+                                   Margin="0,12,0,0"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Fichajes Card -->
+                    <Frame Grid.Column="2" 
+                           BackgroundColor="#1E1E1E" 
+                           CornerRadius="16" 
+                           Padding="16"
+                           HasShadow="False">
+                        <Frame.Shadow>
+                            <Shadow Brush="#40000000" 
+                                    Offset="0,4" 
+                                    Radius="8" 
+                                    Opacity="0.3"/>
+                        </Frame.Shadow>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTransfersClicked"/>
+                        </Frame.GestureRecognizers>
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Ellipse Grid.Row="0" 
+                                     Fill="#FF9800" 
+                                     WidthRequest="48" 
+                                     HeightRequest="48"
+                                     HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" 
+                                   Text="💰" 
+                                   FontSize="24"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Row="2" 
+                                   Text="Fichajes" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold"
+                                   TextColor="White" 
+                                   HorizontalOptions="Center"
+                                   Margin="0,12,0,0"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+                <!-- Row 3: Títulos y Estadísticas -->
+                <Grid ColumnDefinitions="*,16,*" HeightRequest="140">
+                    <!-- Títulos Card -->
+                    <Frame Grid.Column="0" 
+                           BackgroundColor="#1E1E1E" 
+                           CornerRadius="16" 
+                           Padding="16"
+                           HasShadow="False">
+                        <Frame.Shadow>
+                            <Shadow Brush="#40000000" 
+                                    Offset="0,4" 
+                                    Radius="8" 
+                                    Opacity="0.3"/>
+                        </Frame.Shadow>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTitlesClicked"/>
+                        </Frame.GestureRecognizers>
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Ellipse Grid.Row="0" 
+                                     Fill="#F44336" 
+                                     WidthRequest="48" 
+                                     HeightRequest="48"
+                                     HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" 
+                                   Text="🏅" 
+                                   FontSize="24"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Row="2" 
+                                   Text="Títulos" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold"
+                                   TextColor="White" 
+                                   HorizontalOptions="Center"
+                                   Margin="0,12,0,0"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Estadísticas Card -->
+                    <Frame Grid.Column="2" 
+                           BackgroundColor="#1E1E1E" 
+                           CornerRadius="16" 
+                           Padding="16"
+                           HasShadow="False">
+                        <Frame.Shadow>
+                            <Shadow Brush="#40000000" 
+                                    Offset="0,4" 
+                                    Radius="8" 
+                                    Opacity="0.3"/>
+                        </Frame.Shadow>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnStatisticsClicked"/>
+                        </Frame.GestureRecognizers>
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <Ellipse Grid.Row="0" 
+                                     Fill="#607D8B" 
+                                     WidthRequest="48" 
+                                     HeightRequest="48"
+                                     HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" 
+                                   Text="📊" 
+                                   FontSize="24"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Row="2" 
+                                   Text="Estadísticas" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold"
+                                   TextColor="White" 
+                                   HorizontalOptions="Center"
+                                   Margin="0,12,0,0"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+
             </StackLayout>
 
-            <!-- Menu Grid -->
-            <Grid Grid.Row="1" 
-                  ColumnDefinitions="*,*" 
-                  RowDefinitions="*,*,*" 
-                  ColumnSpacing="15" 
-                  RowSpacing="15">
-
-                <!-- Carreras Button -->
-                <Frame Grid.Row="0" Grid.Column="0" 
-                       BackgroundColor="#1A2332" 
-                       BorderColor="#00D4FF" 
-                       CornerRadius="15" 
-                       Padding="0"
-                       HasShadow="True">
-                    <Button Text="🏆&#10;Carreras" 
-                            FontSize="18" 
-                            FontAttributes="Bold"
-                            TextColor="White" 
-                            BackgroundColor="Transparent"
-                            Clicked="OnCareersClicked"
-                            HeightRequest="120"/>
-                </Frame>
-
-                <!-- Temporadas Button -->
-                <Frame Grid.Row="0" Grid.Column="1" 
-                       BackgroundColor="#1A2332" 
-                       BorderColor="#00D4FF" 
-                       CornerRadius="15" 
-                       Padding="0"
-                       HasShadow="True">
-                    <Button Text="📅&#10;Temporadas" 
-                            FontSize="18" 
-                            FontAttributes="Bold"
-                            TextColor="White" 
-                            BackgroundColor="Transparent"
-                            Clicked="OnSeasonsClicked"
-                            HeightRequest="120"/>
-                </Frame>
-
-                <!-- Jugadores Button -->
-                <Frame Grid.Row="1" Grid.Column="0" 
-                       BackgroundColor="#1A2332" 
-                       BorderColor="#00D4FF" 
-                       CornerRadius="15" 
-                       Padding="0"
-                       HasShadow="True">
-                    <Button Text="👤&#10;Jugadores" 
-                            FontSize="18" 
-                            FontAttributes="Bold"
-                            TextColor="White" 
-                            BackgroundColor="Transparent"
-                            Clicked="OnPlayersClicked"
-                            HeightRequest="120"/>
-                </Frame>
-
-                <!-- Fichajes Button -->
-                <Frame Grid.Row="1" Grid.Column="1" 
-                       BackgroundColor="#1A2332" 
-                       BorderColor="#00D4FF" 
-                       CornerRadius="15" 
-                       Padding="0"
-                       HasShadow="True">
-                    <Button Text="💰&#10;Fichajes" 
-                            FontSize="18" 
-                            FontAttributes="Bold"
-                            TextColor="White" 
-                            BackgroundColor="Transparent"
-                            Clicked="OnTransfersClicked"
-                            HeightRequest="120"/>
-                </Frame>
-
-                <!-- Títulos Button -->
-                <Frame Grid.Row="2" Grid.Column="0" 
-                       BackgroundColor="#1A2332" 
-                       BorderColor="#00D4FF" 
-                       CornerRadius="15" 
-                       Padding="0"
-                       HasShadow="True">
-                    <Button Text="🏅&#10;Títulos" 
-                            FontSize="18" 
-                            FontAttributes="Bold"
-                            TextColor="White" 
-                            BackgroundColor="Transparent"
-                            Clicked="OnTitlesClicked"
-                            HeightRequest="120"/>
-                </Frame>
-
-                <!-- Estadísticas Button -->
-                <Frame Grid.Row="2" Grid.Column="1" 
-                       BackgroundColor="#1A2332" 
-                       BorderColor="#00D4FF" 
-                       CornerRadius="15" 
-                       Padding="0"
-                       HasShadow="True">
-                    <Button Text="📊&#10;Estadísticas" 
-                            FontSize="18" 
-                            FontAttributes="Bold"
-                            TextColor="White" 
-                            BackgroundColor="Transparent"
-                            Clicked="OnStatisticsClicked"
-                            HeightRequest="120"/>
-                </Frame>
+            <!-- Bottom Navigation Style Indicator -->
+            <Grid Grid.Row="2" 
+                  BackgroundColor="#1E1E1E" 
+                  HeightRequest="8" 
+                  Margin="0,24,0,0">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#1976D2" Offset="0.0" />
+                        <GradientStop Color="#4CAF50" Offset="0.33" />
+                        <GradientStop Color="#FF9800" Offset="0.66" />
+                        <GradientStop Color="#F44336" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Grid.Background>
             </Grid>
         </Grid>
     </ScrollView>

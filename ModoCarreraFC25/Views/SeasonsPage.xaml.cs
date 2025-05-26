@@ -10,11 +10,24 @@ namespace ModoCarreraFC25.Views
         private ObservableCollection<Season> _seasons;
         private List<Career> _careers;
         private Career _selectedCareer;
+        private string _careerIdToLoad; // Changed from int to string
 
+        // Constructor modificado para aceptar careerId como string
+        public SeasonsPage(IDataService dataService, string careerId)
+        {
+            InitializeComponent();
+            _dataService = dataService;
+            _careerIdToLoad = careerId;
+            _seasons = new ObservableCollection<Season>();
+            SeasonsCollectionView.ItemsSource = _seasons;
+        }
+
+        // Constructor original mantenido para compatibilidad
         public SeasonsPage(IDataService dataService)
         {
             InitializeComponent();
             _dataService = dataService;
+            _careerIdToLoad = null; // Changed from -1 to null
             _seasons = new ObservableCollection<Season>();
             SeasonsCollectionView.ItemsSource = _seasons;
         }
@@ -23,6 +36,24 @@ namespace ModoCarreraFC25.Views
         {
             base.OnAppearing();
             await LoadCareers();
+
+            // Si se pasó un careerId específico, seleccionarlo automáticamente
+            if (!string.IsNullOrEmpty(_careerIdToLoad))
+            {
+                await SelectCareerById(_careerIdToLoad);
+            }
+        }
+
+        private async Task SelectCareerById(string careerId)
+        {
+            var career = _careers?.FirstOrDefault(c => c.Id == careerId); // Now comparing string to string
+            if (career != null)
+            {
+                var index = _careers.IndexOf(career);
+                CareerPicker.SelectedIndex = index;
+                _selectedCareer = career;
+                await LoadSeasons();
+            }
         }
 
         private async Task LoadCareers()
@@ -32,7 +63,8 @@ namespace ModoCarreraFC25.Views
                 _careers = await _dataService.GetCareersAsync();
                 CareerPicker.ItemsSource = _careers.Select(c => c.ManagerName + " - " + c.InitialClub).ToList();
 
-                if (_careers.Any())
+                // Solo seleccionar automáticamente si no hay carrera preseleccionada
+                if (_careers.Any() && string.IsNullOrEmpty(_careerIdToLoad))
                 {
                     CareerPicker.SelectedIndex = 0;
                 }
@@ -104,77 +136,166 @@ namespace ModoCarreraFC25.Views
             bool isEdit = season != null;
             season ??= new Season { CareerId = _selectedCareer.Id, Club = _selectedCareer.InitialClub };
 
-            // Create entry grid
-            var grid = new Grid
+            // Crear una página modal para el formulario
+            var modalPage = new ContentPage
             {
-                RowSpacing = 10,
-                ColumnSpacing = 10,
-                Padding = 20
+                Title = isEdit ? "Editar Temporada" : "Nueva Temporada"
             };
 
-            // Add row definitions
-            for (int i = 0; i < 10; i++)
+            var scrollView = new ScrollView();
+            var mainStack = new StackLayout
             {
-                grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            }
-            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                Padding = 20,
+                Spacing = 15
+            };
 
             // Create entries
-            var yearEntry = new Entry { Text = season.Year.ToString(), Keyboard = Keyboard.Numeric };
-            var clubEntry = new Entry { Text = season.Club };
-            var positionEntry = new Entry { Text = season.LeaguePosition.ToString(), Keyboard = Keyboard.Numeric };
-            var gamesEntry = new Entry { Text = season.GamesPlayed.ToString(), Keyboard = Keyboard.Numeric };
-            var winsEntry = new Entry { Text = season.Wins.ToString(), Keyboard = Keyboard.Numeric };
-            var drawsEntry = new Entry { Text = season.Draws.ToString(), Keyboard = Keyboard.Numeric };
-            var lossesEntry = new Entry { Text = season.Losses.ToString(), Keyboard = Keyboard.Numeric };
-            var goalsForEntry = new Entry { Text = season.GoalsFor.ToString(), Keyboard = Keyboard.Numeric };
-            var goalsAgainstEntry = new Entry { Text = season.GoalsAgainst.ToString(), Keyboard = Keyboard.Numeric };
-            var notesEntry = new Entry { Text = season.Notes };
+            var yearEntry = new Entry
+            {
+                Text = season.Year.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Año"
+            };
+            var clubEntry = new Entry
+            {
+                Text = season.Club,
+                Placeholder = "Club"
+            };
+            var positionEntry = new Entry
+            {
+                Text = season.LeaguePosition.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Posición en Liga"
+            };
+            var gamesEntry = new Entry
+            {
+                Text = season.GamesPlayed.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Partidos Jugados"
+            };
+            var winsEntry = new Entry
+            {
+                Text = season.Wins.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Victorias"
+            };
+            var drawsEntry = new Entry
+            {
+                Text = season.Draws.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Empates"
+            };
+            var lossesEntry = new Entry
+            {
+                Text = season.Losses.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Derrotas"
+            };
+            var goalsForEntry = new Entry
+            {
+                Text = season.GoalsFor.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Goles a Favor"
+            };
+            var goalsAgainstEntry = new Entry
+            {
+                Text = season.GoalsAgainst.ToString(),
+                Keyboard = Keyboard.Numeric,
+                Placeholder = "Goles en Contra"
+            };
+            var notesEntry = new Entry
+            {
+                Text = season.Notes,
+                Placeholder = "Notas"
+            };
 
-            // Add labels and entries to grid
-            grid.Add(new Label { Text = "Año:", VerticalOptions = LayoutOptions.Center }, 0, 0);
-            grid.Add(yearEntry, 1, 0);
+            // Add form fields
+            mainStack.Children.Add(new Label { Text = "Año:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(yearEntry);
 
-            grid.Add(new Label { Text = "Club:", VerticalOptions = LayoutOptions.Center }, 0, 1);
-            grid.Add(clubEntry, 1, 1);
+            mainStack.Children.Add(new Label { Text = "Club:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(clubEntry);
 
-            grid.Add(new Label { Text = "Posición Liga:", VerticalOptions = LayoutOptions.Center }, 0, 2);
-            grid.Add(positionEntry, 1, 2);
+            mainStack.Children.Add(new Label { Text = "Posición Liga:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(positionEntry);
 
-            grid.Add(new Label { Text = "Partidos Jugados:", VerticalOptions = LayoutOptions.Center }, 0, 3);
-            grid.Add(gamesEntry, 1, 3);
+            mainStack.Children.Add(new Label { Text = "Partidos Jugados:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(gamesEntry);
 
-            grid.Add(new Label { Text = "Victorias:", VerticalOptions = LayoutOptions.Center }, 0, 4);
-            grid.Add(winsEntry, 1, 4);
+            mainStack.Children.Add(new Label { Text = "Victorias:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(winsEntry);
 
-            grid.Add(new Label { Text = "Empates:", VerticalOptions = LayoutOptions.Center }, 0, 5);
-            grid.Add(drawsEntry, 1, 5);
+            mainStack.Children.Add(new Label { Text = "Empates:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(drawsEntry);
 
-            grid.Add(new Label { Text = "Derrotas:", VerticalOptions = LayoutOptions.Center }, 0, 6);
-            grid.Add(lossesEntry, 1, 6);
+            mainStack.Children.Add(new Label { Text = "Derrotas:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(lossesEntry);
 
-            grid.Add(new Label { Text = "Goles a Favor:", VerticalOptions = LayoutOptions.Center }, 0, 7);
-            grid.Add(goalsForEntry, 1, 7);
+            mainStack.Children.Add(new Label { Text = "Goles a Favor:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(goalsForEntry);
 
-            grid.Add(new Label { Text = "Goles en Contra:", VerticalOptions = LayoutOptions.Center }, 0, 8);
-            grid.Add(goalsAgainstEntry, 1, 8);
+            mainStack.Children.Add(new Label { Text = "Goles en Contra:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(goalsAgainstEntry);
 
-            grid.Add(new Label { Text = "Notas:", VerticalOptions = LayoutOptions.Center }, 0, 9);
-            grid.Add(notesEntry, 1, 9);
+            mainStack.Children.Add(new Label { Text = "Notas:", FontAttributes = FontAttributes.Bold });
+            mainStack.Children.Add(notesEntry);
 
-            var scrollView = new ScrollView { Content = grid, HeightRequest = 400 };
+            // Buttons
+            var buttonStack = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.Center,
+                Spacing = 10,
+                Margin = new Thickness(0, 20, 0, 0)
+            };
 
-            var action = await DisplayActionSheet(
-                isEdit ? "Editar Temporada" : "Nueva Temporada",
-                "Cancelar",
-                isEdit ? "Eliminar" : null,
-                "Guardar");
+            var saveButton = new Button
+            {
+                Text = "Guardar",
+                BackgroundColor = Color.FromArgb("#00D4FF"),
+                TextColor = Colors.White,
+                WidthRequest = 100
+            };
 
-            if (action == "Guardar")
+            var cancelButton = new Button
+            {
+                Text = "Cancelar",
+                BackgroundColor = Color.FromArgb("#DC143C"),
+                TextColor = Colors.White,
+                WidthRequest = 100
+            };
+
+            if (isEdit)
+            {
+                var deleteButton = new Button
+                {
+                    Text = "Eliminar",
+                    BackgroundColor = Color.FromArgb("#FF6B6B"),
+                    TextColor = Colors.White,
+                    WidthRequest = 100
+                };
+
+                deleteButton.Clicked += async (s, e) =>
+                {
+                    bool confirm = await DisplayAlert("Confirmar", "¿Eliminar esta temporada?", "Sí", "No");
+                    if (confirm)
+                    {
+                        _selectedCareer.Seasons.Remove(season);
+                        _seasons.Remove(season);
+                        await _dataService.SaveCareerAsync(_selectedCareer);
+                        await Navigation.PopAsync();
+                        await DisplayAlert("Éxito", "Temporada eliminada", "OK");
+                    }
+                };
+
+                buttonStack.Children.Add(deleteButton);
+            }
+
+            saveButton.Clicked += async (s, e) =>
             {
                 try
                 {
+                    // Validar y asignar valores
                     season.Year = int.TryParse(yearEntry.Text, out int year) ? year : DateTime.Now.Year;
                     season.Club = clubEntry.Text ?? "";
                     season.LeaguePosition = int.TryParse(positionEntry.Text, out int pos) ? pos : 0;
@@ -194,25 +315,28 @@ namespace ModoCarreraFC25.Views
 
                     await _dataService.SaveCareerAsync(_selectedCareer);
                     await LoadSeasons();
-
+                    await Navigation.PopAsync();
                     await DisplayAlert("Éxito", isEdit ? "Temporada actualizada" : "Temporada agregada", "OK");
                 }
                 catch (Exception ex)
                 {
                     await DisplayAlert("Error", $"Error al guardar: {ex.Message}", "OK");
                 }
-            }
-            else if (action == "Eliminar" && isEdit)
+            };
+
+            cancelButton.Clicked += async (s, e) =>
             {
-                bool confirm = await DisplayAlert("Confirmar", "¿Eliminar esta temporada?", "Sí", "No");
-                if (confirm)
-                {
-                    _selectedCareer.Seasons.Remove(season);
-                    _seasons.Remove(season);
-                    await _dataService.SaveCareerAsync(_selectedCareer);
-                    await DisplayAlert("Éxito", "Temporada eliminada", "OK");
-                }
-            }
+                await Navigation.PopAsync();
+            };
+
+            buttonStack.Children.Add(saveButton);
+            buttonStack.Children.Add(cancelButton);
+            mainStack.Children.Add(buttonStack);
+
+            scrollView.Content = mainStack;
+            modalPage.Content = scrollView;
+
+            await Navigation.PushAsync(modalPage);
         }
     }
 }

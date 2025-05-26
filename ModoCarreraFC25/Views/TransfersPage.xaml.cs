@@ -1,7 +1,7 @@
 ﻿using ModoCarreraFC25.Models;
 using ModoCarreraFC25.Services;
 
-namespace ModoCarreraFC25
+namespace ModoCarreraFC25.Views
 {
     public partial class TransfersPage : ContentPage
     {
@@ -25,9 +25,11 @@ namespace ModoCarreraFC25
             try
             {
                 _careers = await _dataService.GetCareersAsync();
-                CareerPicker.ItemsSource = _careers.Select(c => $"{c.ManagerName} - {c.InitialClub}").ToList();
-
-                if (!_careers.Any())
+                if (_careers != null && _careers.Any())
+                {
+                    CareerPicker.ItemsSource = _careers.Select(c => $"{c.ManagerName} - {c.InitialClub}").ToList();
+                }
+                else
                 {
                     EmptyLabel.Text = "No hay carreras disponibles. Crea una carrera primero.";
                 }
@@ -40,26 +42,38 @@ namespace ModoCarreraFC25
 
         private void OnCareerSelected(object sender, EventArgs e)
         {
-            if (CareerPicker.SelectedIndex >= 0)
+            if (CareerPicker.SelectedIndex >= 0 && _careers != null && _careers.Count > CareerPicker.SelectedIndex)
             {
                 _selectedCareer = _careers[CareerPicker.SelectedIndex];
-                SeasonPicker.ItemsSource = _selectedCareer.Seasons.Select(s => $"Temporada {s.Year} - {s.Club}").ToList();
-                SeasonLayout.IsVisible = true;
 
-                if (!_selectedCareer.Seasons.Any())
+                if (_selectedCareer.Seasons != null && _selectedCareer.Seasons.Any())
+                {
+                    SeasonPicker.ItemsSource = _selectedCareer.Seasons.Select(s => $"Temporada {s.Year} - {s.Club}").ToList();
+                    SeasonLayout.IsVisible = true;
+                }
+                else
                 {
                     EmptyLabel.Text = "Esta carrera no tiene temporadas. Crea una temporada primero.";
                     TransfersContainer.Children.Clear();
                     TransfersContainer.Children.Add(EmptyLabel);
+                    SeasonLayout.IsVisible = false;
+                    FilterLayout.IsVisible = false;
+                    AddTransferBtn.IsVisible = false;
                 }
             }
         }
 
         private void OnSeasonSelected(object sender, EventArgs e)
         {
-            if (SeasonPicker.SelectedIndex >= 0)
+            if (SeasonPicker.SelectedIndex >= 0 && _selectedCareer?.Seasons != null &&
+                _selectedCareer.Seasons.Count > SeasonPicker.SelectedIndex)
             {
                 _selectedSeason = _selectedCareer.Seasons[SeasonPicker.SelectedIndex];
+
+                // Inicializar la lista de transfers si es null
+                if (_selectedSeason.Transfers == null)
+                    _selectedSeason.Transfers = new List<Transfer>();
+
                 _allTransfers = _selectedSeason.Transfers;
                 FilterLayout.IsVisible = true;
                 AddTransferBtn.IsVisible = true;
@@ -80,12 +94,19 @@ namespace ModoCarreraFC25
         {
             TransfersContainer.Children.Clear();
 
+            if (_allTransfers == null || !_allTransfers.Any())
+            {
+                EmptyLabel.Text = "No hay fichajes registrados en esta temporada";
+                TransfersContainer.Children.Add(EmptyLabel);
+                return;
+            }
+
             var filteredTransfers = _currentFilter switch
             {
                 "Fichajes" => _allTransfers.Where(t => t.TransferType == "Fichaje").ToList(),
                 "Ventas" => _allTransfers.Where(t => t.TransferType == "Venta").ToList(),
                 "Préstamos" => _allTransfers.Where(t => t.TransferType == "Préstamo").ToList(),
-                _ => _allTransfers
+                _ => _allTransfers.ToList()
             };
 
             if (!filteredTransfers.Any())
@@ -146,7 +167,7 @@ namespace ModoCarreraFC25
             // Player Name
             var playerLabel = new Label
             {
-                Text = transfer.PlayerName,
+                Text = transfer.PlayerName ?? "Sin nombre",
                 TextColor = Colors.White,
                 FontSize = 18,
                 FontAttributes = FontAttributes.Bold
@@ -239,69 +260,128 @@ namespace ModoCarreraFC25
 
         private async void OnAddTransferClicked(object sender, EventArgs e)
         {
+            if (_selectedSeason == null)
+            {
+                await DisplayAlert("Error", "Debe seleccionar una temporada primero", "OK");
+                return;
+            }
+
             await ShowTransferForm(new Transfer());
         }
 
         private async Task EditTransfer(Transfer transfer)
         {
+            if (transfer == null) return;
             await ShowTransferForm(transfer);
         }
 
         private async Task DeleteTransfer(Transfer transfer)
         {
-            var result = await DisplayAlert("Confirmar", $"¿Eliminar el fichaje de {transfer.PlayerName}?", "Sí", "No");
+            if (transfer == null || _selectedSeason == null) return;
+
+            var result = await DisplayAlert("Confirmar", $"¿Eliminar el fichaje de {transfer.PlayerName ?? "este jugador"}?", "Sí", "No");
             if (result)
             {
-                _selectedSeason.Transfers.Remove(transfer);
-                await _dataService.SaveCareerAsync(_selectedCareer);
-                _allTransfers = _selectedSeason.Transfers;
-                LoadTransfers();
+                try
+                {
+                    _selectedSeason.Transfers.Remove(transfer);
+                    await _dataService.SaveCareerAsync(_selectedCareer);
+                    _allTransfers = _selectedSeason.Transfers;
+                    LoadTransfers();
+                    await DisplayAlert("Éxito", "Fichaje eliminado correctamente", "OK");
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", $"Error al eliminar fichaje: {ex.Message}", "OK");
+                }
             }
         }
 
         private async Task ShowTransferForm(Transfer transfer)
         {
-            var isNew = string.IsNullOrEmpty(transfer.PlayerName);
-            var title = isNew ? "Registrar Fichaje" : "Editar Fichaje";
+            if (transfer == null || _selectedSeason == null) return;
 
-            // Player Name
-            var playerResult = await DisplayPromptAsync(title, "Nombre del jugador:", initialValue: transfer.PlayerName ?? "");
-            if (string.IsNullOrWhiteSpace(playerResult)) return;
-
-            // Transfer Type
-            var typeResult = await DisplayActionSheet("Tipo de fichaje:", "Cancelar", null, "Fichaje", "Venta", "Préstamo");
-            if (typeResult == "Cancelar") return;
-
-            // From Club
-            var fromResult = await DisplayPromptAsync(title, "Club de origen:", initialValue: transfer.FromClub ?? "");
-
-            // To Club
-            var toResult = await DisplayPromptAsync(title, "Club destino:", initialValue: transfer.ToClub ?? "");
-
-            // Amount
-            var amountResult = await DisplayPromptAsync(title, "Cantidad (€):", initialValue: transfer.Amount.ToString(), keyboard: Keyboard.Numeric);
-            if (!decimal.TryParse(amountResult, out decimal amount)) amount = 0;
-
-            // Notes
-            var notesResult = await DisplayPromptAsync(title, "Notas (opcional):", initialValue: transfer.Notes ?? "");
-
-            // Update transfer data
-            transfer.PlayerName = playerResult;
-            transfer.TransferType = typeResult;
-            transfer.FromClub = fromResult;
-            transfer.ToClub = toResult;
-            transfer.Amount = amount;
-            transfer.Notes = notesResult;
-
-            if (isNew)
+            try
             {
-                transfer.Date = DateTime.Now;
-                _selectedSeason.Transfers.Add(transfer);
-            }
+                var isNew = string.IsNullOrEmpty(transfer.PlayerName);
+                var title = isNew ? "Registrar Fichaje" : "Editar Fichaje";
 
-            await _dataService.SaveCareerAsync(_selectedCareer);
-            _allTransfers = _selectedSeason.Transfers;
-            LoadTransfers();
+                // Nombre del jugador
+                var playerResult = await DisplayPromptAsync(title, "Nombre del jugador:",
+                    initialValue: transfer.PlayerName ?? "",
+                    maxLength: 50);
+                if (string.IsNullOrWhiteSpace(playerResult))
+                {
+                    if (isNew) await DisplayAlert("Cancelado", "Debe ingresar el nombre del jugador", "OK");
+                    return;
+                }
+
+                // Tipo de fichaje
+                var typeResult = await DisplayActionSheet("Tipo de fichaje:", "Cancelar", null, "Fichaje", "Venta", "Préstamo");
+                if (typeResult == "Cancelar" || string.IsNullOrEmpty(typeResult))
+                {
+                    if (isNew) return;
+                    typeResult = transfer.TransferType ?? "Fichaje";
+                }
+
+                // Club de origen
+                var fromResult = await DisplayPromptAsync(title, "Club de origen (opcional):",
+                    initialValue: transfer.FromClub ?? "");
+
+                // Club destino
+                var toResult = await DisplayPromptAsync(title, "Club destino (opcional):",
+                    initialValue: transfer.ToClub ?? "");
+
+                // Cantidad
+                var amountResult = await DisplayPromptAsync(title, "Cantidad en euros (0 si es gratis):",
+                    initialValue: transfer.Amount.ToString("F0"),
+                    keyboard: Keyboard.Numeric);
+
+                decimal amount = 0;
+                if (!string.IsNullOrWhiteSpace(amountResult))
+                {
+                    if (!decimal.TryParse(amountResult, out amount) || amount < 0)
+                    {
+                        await DisplayAlert("Error", "La cantidad debe ser un número positivo", "OK");
+                        return;
+                    }
+                }
+
+                // Notas opcionales
+                var notesResult = await DisplayPromptAsync(title, "Notas adicionales (opcional):",
+                    initialValue: transfer.Notes ?? "");
+
+                // Actualizar datos del fichaje
+                transfer.PlayerName = playerResult.Trim();
+                transfer.TransferType = typeResult;
+                transfer.FromClub = !string.IsNullOrWhiteSpace(fromResult) ? fromResult.Trim() : null;
+                transfer.ToClub = !string.IsNullOrWhiteSpace(toResult) ? toResult.Trim() : null;
+                transfer.Amount = amount;
+                transfer.Notes = !string.IsNullOrWhiteSpace(notesResult) ? notesResult.Trim() : null;
+
+                // Si es nuevo, establecer la fecha y agregarlo
+                if (isNew)
+                {
+                    transfer.Date = DateTime.Now;
+
+                    if (_selectedSeason.Transfers == null)
+                        _selectedSeason.Transfers = new List<Transfer>();
+
+                    _selectedSeason.Transfers.Add(transfer);
+                }
+
+                // Guardar cambios
+                await _dataService.SaveCareerAsync(_selectedCareer);
+                _allTransfers = _selectedSeason.Transfers;
+                LoadTransfers();
+
+                var message = isNew ? "Fichaje registrado correctamente" : "Fichaje actualizado correctamente";
+                await DisplayAlert("Éxito", message, "OK");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Error al procesar fichaje: {ex.Message}", "OK");
+            }
         }
     }
 }
